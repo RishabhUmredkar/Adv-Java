@@ -1,0 +1,13 @@
+package implement;
+
+import Interface.vehicle;
+
+public class bike implements vehicle {
+
+	@Override
+	public void start() {
+
+		System.out.println("Engine Started");
+	}
+
+}

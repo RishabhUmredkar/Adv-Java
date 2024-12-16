@@ -1,0 +1,9 @@
+package Helper;
+
+import implement.*;
+public class HelpVehicle {
+	public static vehicle getVehicle()
+	{
+		return new bike;
+	}
+}

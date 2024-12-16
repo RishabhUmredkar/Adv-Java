@@ -1,0 +1,22 @@
+package com.jsp;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class JDBC {
+	public static void main(String[] args) {
+		System.out.println("abc");
+		String url = "jdbc:postgresql://localhost:5432/qsp";
+		String user = "postgres";
+		
+		try {
+			Class.forName("org.postgresql.Driver");
+			System.out.println("done");
+			Connection con = DriverManager.getConnection(url, user, password)
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+}	
