@@ -1,0 +1,31 @@
+package com.PrepareStatemt;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class Execute {
+
+	public static void main(String[] args) {
+		System.out.println("abc");
+//		String url = "jdbc:postgresql://localhost:5432/qsp";
+		String url = "jdbc:postgresql://localhost:5432/qsp?user=postgres&password=root";
+		String user = "postgres";
+		String pass = "root";
+		
+
+		try {
+			//Step 1
+			Class.forName("org.postgresql.Driver");
+			System.out.println("done");
+			
+			//Step 2
+			Connection con = DriverManager.getConnection(url);
+			System.out.println("connection "+con);
+			
+			//Step 3
+			Statement stmt = con.createStatement();
+			
+	}
+
+}

@@ -1,0 +1,31 @@
+package com.CreateStatemt;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class ExecuteUpdate {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String url = "jdbc:postgresql://localhost:5432/qsp";
+		String user = "postgres";
+		String pass = "root";
+		try {
+			Class.forName("org.postgresql.Driver");
+			Connection con = DriverManager.getConnection(url,user,pass);
+			System.out.println("connection is Done");
+			
+			Statement st = con.createStatement();
+			
+			boolean res = stmt.execute("insert into emp values(40,'Ketan',60000,785421)");
+			boolean res1 = stmt.execute("update emp set name = 'Ketan' where id = 40");
+			boolean res3 = stmt.execute("delete from emp where id =10");
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
