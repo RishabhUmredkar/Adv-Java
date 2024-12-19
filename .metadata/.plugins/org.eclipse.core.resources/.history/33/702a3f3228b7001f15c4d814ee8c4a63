@@ -1,7 +1,0 @@
-package Interface;
-
-public interface vehicle {
-	void start();
-	void getEngine();
-
-}

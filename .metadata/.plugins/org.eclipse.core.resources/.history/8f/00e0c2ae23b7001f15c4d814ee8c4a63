@@ -1,7 +1,0 @@
-package Interface;
-
-interface vehicle {
-	void start();
-	
-
-}

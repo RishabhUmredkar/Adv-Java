@@ -1,8 +1,0 @@
-package Helper;
-
-public class HelpVehicle {
-	public static vehicle getVehicle()
-	{
-		return new 
-	}
-}

@@ -1,7 +1,0 @@
-package implement;
-
-import java.beans.VetoableChangeListener;
-
-public class bike implements vehicle {
-
-}
