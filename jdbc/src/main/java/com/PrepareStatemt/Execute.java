@@ -3,6 +3,7 @@ package com.PrepareStatemt;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
@@ -11,6 +12,7 @@ public class Execute {
 
 	public static void main(String[] args) {
 		System.out.println("abc");
+		
 //		String url = "jdbc:postgresql://localhost:5432/qsp";
 		String url = "jdbc:postgresql://localhost:5432/qsp?user=postgres&password=root";
 		String user = "postgres";
@@ -45,6 +47,22 @@ public class Execute {
 				ps.setString(2, name);
 				ps.setDouble(3, sal);
 				ps.setLong(4, phno);
+				ps.execute();
+				
+				ps = con.prepareStatement("update emp set phno = ? where id = ?");
+				ps.setLong(1, 4052);
+				ps.setInt(2, 101);
+				ps.execute();
+				
+				PreparedStatement ps2 = con.prepareStatement("select * from emp where id = ?");
+				ps2.setInt(1, 101);
+				ps2.setInt(1, 20);
+				ps2.execute();
+				ResultSet rs = ps2.getResultSet();
+				while(rs.next())
+				{
+					System.out.println(rs.getInt("id"));
+				}
 				
 				ps.execute();
 				System.out.println("done");

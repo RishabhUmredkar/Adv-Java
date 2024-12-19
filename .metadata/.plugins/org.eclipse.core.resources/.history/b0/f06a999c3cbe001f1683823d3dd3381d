@@ -1,0 +1,23 @@
+package com.PrepareStatemt;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class ExecuteUpdate {
+	static{
+		try {
+			Class.forName("org.postgresql.Driver");
+			Connection con = DriverManager.getConnection(url);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		
+	}
+
+}

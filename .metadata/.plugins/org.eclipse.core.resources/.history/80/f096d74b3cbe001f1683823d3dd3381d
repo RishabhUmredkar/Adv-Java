@@ -1,0 +1,12 @@
+package com.PrepareStatemt;
+
+public class ExecuteUpdate {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String url = "jdbc:postgresql://localhost:5432/qsp?user=postgres&password=root";
+		String user = "postgres";
+		String pass = "root";
+	}
+
+}
