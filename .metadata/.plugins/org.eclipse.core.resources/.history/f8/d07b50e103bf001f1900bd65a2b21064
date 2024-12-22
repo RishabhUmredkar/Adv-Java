@@ -3,6 +3,7 @@ package com.CollableStatement;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class StoredProcedure {
@@ -24,11 +25,15 @@ public class StoredProcedure {
 	
 	public static void main(String[] args) throws SQLException {
 
-			CallableStatement cs = con.prepareCall("call create_student(1,'Rishabh',101)");
+//			CallableStatement cs = con.prepareCall("call create_student(1,'Rishabh',101)");
 			
-//			CallableStatement cs = con.prepareCall("call show_student(?,?,?)");
-			cs.execute();
+			CallableStatement cs = con.prepareCall("call show_student(?,?,?)");
+			ResultSet rs = cs.executeQuery();
 			
+			while(rs.next())
+			{
+				
+			}
 			System.out.println("Data Inserted");
 			con.close();
 		
