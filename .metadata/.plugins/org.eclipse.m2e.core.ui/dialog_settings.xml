@@ -2,20 +2,10 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
-			<item value="com.jsp"/>
-			<item value="abc"/>
-			<item value="abcq"/>
-			<item value="JSP"/>
-			<item value="com.qsp"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
-			<item value="jdbcc"/>
-			<item value="jdbc2"/>
-			<item value="demo"/>
-			<item value="jdbc1"/>
-			<item value="jdbc"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -54,6 +44,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="E:\QSpider Coding\Adv Java\ServletDay1"/>
 			<item value="E:\QSpider Coding\Adv Java\jdbc\src\main\java\com\qsp\JDBC.java"/>
 			<item value="E:\QSpider Coding\Adv Java"/>
 			<item value="E:\QSpider Coding\Adv Java\OOPS\src\implement\bike.java"/>
@@ -69,10 +60,17 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.qsp.servlet2"/>
+			<item value="com.qsp.ServletDay1"/>
+			<item value="com.qsp.servletDay1"/>
 		</list>
 		<list key="groupId">
+			<item value="com.qsp"/>
 		</list>
 		<list key="artifactId">
+			<item value="servlet2"/>
+			<item value="ServletDay1"/>
+			<item value="servletDay1"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

@@ -158,7 +158,8 @@ public class Product {
 		ps.setString(2, name);
 		ps.setLong(3, (long) price);
 		boolean row = ps.execute();
-		if(row != false)
+		System.out.println(row);
+		if(row == false)
 		{
 			System.err.println("Data Inserted Successfully");
 		}
