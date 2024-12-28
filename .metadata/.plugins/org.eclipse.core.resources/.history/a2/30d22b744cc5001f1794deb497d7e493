@@ -1,0 +1,666 @@
+package com.server;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.GenericServlet;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+
+public class Myservlet extends GenericServlet{
+
+	@Override
+	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		res.setContentType("text/html");
+		PrintWriter out = res.getWriter();
+		
+		out.print("<h1>Hiiii</h1>");
+		out.print("<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Form Page</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wdth,wght@96.8,100..800&family=Open+Sans:wght@500&family=Roboto+Slab:wght@200;400&family=Yatra+One&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto Slab', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            /* Ensures full width of the viewport */
+        }
+
+        .container {
+            width: 90%;
+            /* Adjust container width */
+            max-width: 400px;
+            /* Limits maximum width */
+            background: #efe8e8;
+            position: relative;
+            border-radius: 20px;
+            overflow-x: hidden;
+            /* Prevents horizontal scrolling */
+        }
+
+
+        .container::before,
+        .container::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: #ffffff;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .container::before {
+            left: -20px;
+        }
+
+        .container::after {
+            right: -20px;
+        }
+
+        .dotted-line-between {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            margin-left: 20px;
+            /* Moves the line towards the right */
+
+            width: 100%;
+            transform: translateY(-50%);
+            border-top: 2px dashed #ccc;
+        }
+
+        .header {
+            background-color: #219652;
+            color: white;
+            padding: 16px;
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .header span {
+            font-size: 12px;
+            color: #ffffff;
+        }
+
+        .content {
+            padding: 10px;
+            position: relative;
+        }
+
+        .route-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: -9px;
+        }
+
+        .route-info .icon {
+            width: 50px;
+            height: 45px;
+            background-color: #219652;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+            margin-right: 16px;
+        }
+
+        .route-info .details {
+            font-size: 14px;
+            font-family: 'Anek Devanagari', sans-serif;
+        }
+
+        .route-info .details .route-number {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .route-number {
+            font-size: 20px;
+            font-weight: 600;
+            border: none;
+            background: transparent;
+            outline: none;
+            color: #333;
+            /* Set the text color */
+            width: 15%;
+            /* Ensure it takes up available space */
+            text-align: center;
+            /* Center the text if needed */
+            padding: 5px;
+            /* Add padding if necessary */
+        }
+
+
+        .stops {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            /* Adjusted the gap for better spacing */
+        }
+
+        .stops label {
+            display: flex;
+            align-items: center;
+            /* Center the label with the custom radio */
+            gap: 10px;
+            /* Adjusted the gap */
+            font-size: 15px;
+            color: #333;
+        }
+
+
+
+        .custom-radio {
+            width: 8px;
+            height: 8px;
+            border: 4px solid rgb(115, 112, 112);
+            border-radius: 50%;
+            background-color: transparent;
+            display: inline-block;
+        }
+
+        .edit {
+            font-size: 14px;
+            color: #616161;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        /* Custom radio appearance */
+        .stops input[type="radio"] {
+            display: none;
+        }
+
+        .stops input[type="radio"] {
+            margin-right: 8px;
+        }
+
+        .stop-name {
+            font-size: 19px;
+            color: #0f0d0d;
+            border: none;
+            background: transparent;
+            outline: none;
+            width: auto;
+            /* Ensure it adjusts according to the input length */
+            display: inline;
+            /* Keeps the input inline with the label */
+            margin-left: 20px;
+            /* Adjusts the spacing if needed */
+
+        }
+
+
+        .fare-options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            /* Space between buttons */
+            margin-top: 80px;
+            /* Adjust this value to control the gap below the horizontal line */
+        }
+
+        .fare-options button {
+            padding: 10px 20px;
+            font-size: 14px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            border-color: #000000;
+            cursor: pointer;
+            width: 150px;
+            /* Set equal width for all buttons */
+
+
+        }
+
+        .fare-options button:hover {
+            background-color: #45a049;
+
+        }
+
+        .fare-options button:first-child {
+            background-color: #ffffff;
+            border: 1px solid rgb(140, 140, 140);
+            /* Black border */
+            color: black;
+
+        }
+
+        .fare-options button:last-child {
+            background-color: #219652;
+            color: white;
+
+        }
+
+        .ticket-count {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        .ticket-count label {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+
+
+        .ticket-count input {
+            margin-bottom: 10px;
+            width: 100px;
+            padding: 5px;
+            text-align: center;
+        }
+
+
+        .counter {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+
+        .counter span {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .ticket-count .counter {
+            display: flex;
+            align-items: center;
+        }
+
+        .counter button {
+            width: 30px;
+            height: 36px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            background-color: white;
+            border-radius: 20%;
+            margin: 0 2px;
+        }
+
+        #half-ticket-count {
+            font-size: 16px;
+            padding: 5px;
+            width: 40px;
+            text-align: center;
+        }
+
+        #full-ticket-count {
+            font-size: 16px;
+            padding: 5px;
+            width: 40px;
+            text-align: center;
+        }
+
+        .price {
+            font-size: 14px;
+            color: #616161;
+        }
+
+        .pay-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-top: 1px solid #ccc;
+            background-color: #f5f5f5;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .pay-section select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .pay-section button {
+            padding: 12px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #219652;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .horizontal-line {
+            width: 100%;
+            height: 1px;
+            background-color: #ccc;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            /* Space below the line */
+
+        }
+
+        .dotted-line {
+            border-top: 2px dashed #ccc;
+            margin: 15px 0;
+
+        }
+
+        .content .horizontal-line {
+            width: 100%;
+        }
+
+        #current-date-time {
+            margin-bottom: 20px;
+            font-size: 15px;
+            font-weight: 600;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+        }
+
+        .logo-image {
+            width: 30px;
+            /* Adjust width as needed */
+            height: auto;
+            border-radius: 25%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div><span id="current-date-time"></span></div>
+        </div>
+        <div class="dotted-line-between"></div>
+
+        <div class="content">
+            <div class="route-info">
+                <div class="icon">
+                    <img width="30" height="30" src="https://img.icons8.com/material-rounded/48/FFFFFF/bus.png"
+                        alt="bus" />
+                </div>
+                <div class="details">
+                    <input type="text" name="route" id="route" class="route-number" value="K7" />
+                    <div style="margin-left: 10px;">towards Ma Na Pa Shramik Bhavan</div>
+                </div>
+            </div>
+
+            <div class="horizontal-line"></div>
+
+            <div class="stops">
+                <label style="display: flex; flex-direction: column; align-items: flex-start;">
+                    <span>
+                        <span class="custom-radio"></span>
+                        Starting Point
+                    </span>
+                    <select name="startingPoint" id="starting-point" class="stop-name" style="margin-top: 0px; ">
+                        <option value="Deccan Gymkhana" selected>Deccan Gymkhana</option>
+                        <!-- Add more options here as needed -->
+                        <option value="Karve Nagar">Karve Nagar</option>
+                        <option value="Vadacha Stop">Vadacha Stop</option>
+                        <option value="Vandevi karve Road">Vandevi karve Road</option>
+                        <option value="Deccan Gymkhana">Deccan Gymkhana</option>
+                        <option value="Deccan Corner">Deccan Corner</option>
+                        <!-- Add other options -->
+                    </select>
+                </label>
+
+                <label style="display: flex; flex-direction: column; align-items: flex-start; margin-top: 15px;">
+                    <span>
+                        <span class="custom-radio"></span>
+                        Ending Stop
+                    </span>
+                    <select name="droppingPoint" id="dropping-point" class="stop-name" style="margin-top: 0px;">
+                        <option value="Vadacha Stop" selected>Vadacha Stop</option>
+                        <!-- Add more options here as needed -->
+                        <option value="Karve Nagar">Karve Nagar</option>
+                        <option value="Vadacha Stop">Vadacha Stop</option>
+                        <option value="Deccan Corner">Deccan Corner</option>
+                        <option value="Goodluck Chowk">Goodluck Chowk</option>
+                        <option value="Deccan Gymkhana">Deccan Gymkhana</option>
+
+                        <!-- Add other options -->
+                    </select>
+                </label>
+            </div>
+
+
+            <div class="fare-options">
+                <button>By Fare</button>
+                <button>By Ending stop</button>
+            </div>
+
+            <div class="ticket-count">
+                <label for="full-ticket-price">Full</label>
+                <select name="fullTicketPrice" id="full-ticket-price" class="ticket-price">
+                    <option value="5.0">₹5</option>
+                    <option value="10.0">₹10</option>
+                    <option value="15.0">₹15</option>
+                    <option value="20.0">₹20</option>
+                </select>
+
+                <div class="counter">
+                    <button type="button" class="decrease" id="full-decrease">-</button>
+                    <span id="full-ticket-count">1</span>
+                    <button type="button" class="increase" id="full-increase">+</button>
+                </div>
+            </div>
+
+            <div class="ticket-count">
+                <label for="half-ticket-price">Half</label>
+                <select name="halfTicketPrice" id="half-ticket-price" class="ticket-price">
+                    <option value="2.5">₹2</option>
+                    <option value="5.0">₹5</option>
+                    <option value="7.5">₹7</option>
+                    <option value="10.0">₹10</option>
+                </select>
+                <div class="counter">
+                    <button type="button" class="decrease" id="half-decrease">-</button>
+                    <span id="half-ticket-count">0</span>
+                    <button type="button" class="increase" id="half-increase">+</button>
+                </div>
+            </div>
+
+            <!-- Hidden inputs to hold the ticket counts -->
+            <input type="hidden" name="fullTicketCount" id="fullTicketCountInput">
+            <input type="hidden" name="halfTicketCount" id="halfTicketCountInput">
+            <input type="hidden" id="validity-time-input">
+
+            <div class="pay-section">
+                <div class="logo-section">
+                    <img src="phonePay.png" alt="PhonePe Logo" class="logo-image" />
+                </div>
+                <select name="paymentMethod" id="payment-method">
+                    <option value="Phone">Phone</option>
+                    <option value="Cash">Cash</option>
+                    <option value="Card">Card</option>
+                </select>
+                <button type="button" class="total-price" onclick="submitForm()" id="pay-button">Pay ₹5.0</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const routeInput = document.getElementById('route');
+        const startingPointInput = document.getElementById('starting-point');
+        const droppingPointInput = document.getElementById('dropping-point');
+        const fullTicketPriceSelect = document.getElementById('full-ticket-price');
+        const halfTicketPriceSelect = document.getElementById('half-ticket-price');
+        const fullTicketCountElement = document.getElementById('full-ticket-count');
+        const halfTicketCountElement = document.getElementById('half-ticket-count');
+        const payButton = document.getElementById('pay-button');
+        const dateTimeElement = document.getElementById('current-date-time');
+
+        let fullTicketCount = 1;
+        let halfTicketCount = 0;
+        let fullFare = parseFloat(fullTicketPriceSelect.value);
+        let halfFare = parseFloat(halfTicketPriceSelect.value);
+
+
+        document.getElementById('fullTicketCountInput').value = fullTicketCount;
+        document.getElementById('halfTicketCountInput').value = halfTicketCount;
+
+        function updateTotalPrice() {
+            const totalPrice = (fullTicketCount * fullFare) + (halfTicketCount * halfFare);
+            payButton.innerHTML = `Pay &#8377;${totalPrice.toFixed(2)}`;
+        }
+        // Full ticket counter logic
+        document.getElementById('full-increase').addEventListener('click', () => {
+            fullTicketCount++;
+            fullTicketCountElement.textContent = fullTicketCount;
+            document.getElementById('fullTicketCountInput').value = fullTicketCount; // Sync hidden input
+            updateTotalPrice();
+        });
+
+        document.getElementById('full-decrease').addEventListener('click', () => {
+            if (fullTicketCount > 0) {
+                fullTicketCount--;
+                fullTicketCountElement.textContent = fullTicketCount;
+                document.getElementById('fullTicketCountInput').value = fullTicketCount; // Sync hidden input
+                updateTotalPrice();
+            }
+        });
+
+        // Half ticket counter logic
+        document.getElementById('half-increase').addEventListener('click', () => {
+            halfTicketCount++;
+            halfTicketCountElement.textContent = halfTicketCount;
+            document.getElementById('halfTicketCountInput').value = halfTicketCount; // Sync hidden input
+            updateTotalPrice();
+        });
+
+        document.getElementById('half-decrease').addEventListener('click', () => {
+            if (halfTicketCount > 0) {
+                halfTicketCount--;
+                halfTicketCountElement.textContent = halfTicketCount;
+                document.getElementById('halfTicketCountInput').value = halfTicketCount; // Sync hidden input
+                updateTotalPrice();
+            }
+        });
+
+        // Add logging to debug
+        console.log("Full Tickets:", fullTicketCount, "Half Tickets:", halfTicketCount);
+
+
+        // Fare selection logic
+        fullTicketPriceSelect.addEventListener('change', () => {
+            fullFare = parseFloat(fullTicketPriceSelect.value);
+            updateTotalPrice();
+        });
+
+        halfTicketPriceSelect.addEventListener('change', () => {
+            halfFare = parseFloat(halfTicketPriceSelect.value);
+            updateTotalPrice();
+        });
+
+        // Format the time in a readable format
+        function formatLocalTime(date) {
+            return date.toLocaleString('en-IN', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+        }
+
+        // Calculate validity time (30 minutes from now)
+        const now = new Date();
+        const validityTime = new Date(now);
+        validityTime.setMinutes(validityTime.getMinutes() + 30);
+
+        // Update date and time display
+        function updateDateTime() {
+            const now = new Date();
+
+            // Format date as "15 Dec, 2024"
+            const options = { day: '2-digit', month: 'short', year: 'numeric' };
+            const formattedDate = now.toLocaleDateString('en-UK', options);
+
+            // Format time as "04:14 AM/PM"
+            const hours = now.getHours();
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            const formattedTime = `${hours % 12 || 12}:${minutes} ${ampm}`;
+
+            // Combine date and time
+            const dateTimeString = `${formattedDate} | ${formattedTime}`;
+
+            // Update the DOM
+            dateTimeElement.textContent = dateTimeString;
+        }
+
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+
+        // Function to submit data to another page or store in localStorage
+        function submitForm() {
+            const route = routeInput.value;
+            const startingPoint = startingPointInput.value;
+            const droppingPoint = droppingPointInput.value;
+            const bookingTime = formatLocalTime(new Date());
+            const validityTimeFormatted = formatLocalTime(validityTime);
+
+            // Save data to localStorage
+            localStorage.setItem('route', route);
+            localStorage.setItem('fullTicketCount', fullTicketCount);
+            localStorage.setItem('halfTicketCount', halfTicketCount);
+            localStorage.setItem('fare', (fullTicketCount * fullFare) + (halfTicketCount * halfFare));
+            localStorage.setItem('startingPoint', startingPoint);
+            localStorage.setItem('droppingPoint', droppingPoint);
+            localStorage.setItem('bookingTime', bookingTime);
+            localStorage.setItem('validityTime', validityTimeFormatted);
+
+            // Redirect to result.html
+            window.location.href = `clone3.html?route=${route}&fullTicketCount=${fullTicketCount}&fare=${(fullTicketCount * fullFare) + (halfTicketCount * halfFare)}&startingPoint=${startingPoint}&droppingPoint=${droppingPoint}&bookingTime=${encodeURIComponent(bookingTime)}&validityTime=${encodeURIComponent(validityTimeFormatted)}`;
+        }
+    </script>
+</body>
+</html>");
+	}
+
+}
+
+

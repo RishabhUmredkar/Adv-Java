@@ -1,0 +1,8 @@
+package com.server;
+
+import java.lang.reflect.GenericSignatureFormatError;
+
+public class generic extends GenericSignatureFormatError{
+	
+
+}
