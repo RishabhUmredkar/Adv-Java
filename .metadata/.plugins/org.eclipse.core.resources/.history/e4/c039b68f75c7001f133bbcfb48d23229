@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form action="reg">
+Name: <input type="text" placeholder="Enter the Name" name ="userName"><br>
+Phno :<input type="text" placeholder="Enter the Name" name ="phno"><br>
+<input type="s">
+</form>
+</body>
+</html>

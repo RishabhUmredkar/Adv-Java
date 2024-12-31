@@ -44,6 +44,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="E:\QSpider Coding\Adv Java\MyServer\src\main\java\com\server\Myservlet.java"/>
 			<item value="E:\QSpider Coding\Adv Java\servlet\src\server\myservlet.java"/>
 			<item value="E:\QSpider Coding\Adv Java\servlet"/>
 			<item value="E:\QSpider Coding\Adv Java\ServletDay1"/>
@@ -62,6 +63,8 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.qsp.Form"/>
+			<item value="com.qsp.Oyyyyyyy"/>
 			<item value="com.qsp.MyServer"/>
 			<item value="com.qsp.myserver"/>
 			<item value="com.qsp.newone"/>
@@ -76,6 +79,8 @@
 			<item value="com.qsp"/>
 		</list>
 		<list key="artifactId">
+			<item value="Form"/>
+			<item value="Oyyyyyyy"/>
 			<item value="MyServer"/>
 			<item value="myserver"/>
 			<item value="newone"/>
