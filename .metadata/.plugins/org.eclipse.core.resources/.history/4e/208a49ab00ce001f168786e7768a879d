@@ -1,0 +1,53 @@
+package Servlet;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class CreateJDBC {
+
+	
+	static String url = "jdbc:postgresql://localhost:5432/qsp";
+	static String user = "postgres";
+	static String pass = "root";
+	static Connection con = null;
+	static Scanner sc = new Scanner(System.in);
+
+	
+	static{
+		try {
+			Class.forName("org.postgresql.Driver");
+			con = DriverManager.getConnection(url, user, pass);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public static boolean fetchData(String name, String pass) {
+		// TODO Auto-generated method stub
+		boolean b = false;
+		PreparedStatement ps;
+		try {
+			ps = con.prepareStatement("select * from intern where name = ?, pass = ?");
+			ps.setString(1, user);
+			ps.setString(2, pass);
+			ResultSet rs = ps.executeQuery();
+			b = rs.next();
+			System.out.println(b);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	
+		return false;
+	}
+
+}

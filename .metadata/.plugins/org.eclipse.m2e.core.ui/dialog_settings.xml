@@ -44,6 +44,9 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="E:\QSpider Coding\Adv Java\NewJDBC"/>
+			<item value="E:\QSpider Coding\Adv Java\LoginServlet"/>
+			<item value="E:\QSpider Coding\Adv Java\Form"/>
 			<item value="E:\QSpider Coding\Adv Java\MyServer\src\main\java\com\server\Myservlet.java"/>
 			<item value="E:\QSpider Coding\Adv Java\servlet\src\server\myservlet.java"/>
 			<item value="E:\QSpider Coding\Adv Java\servlet"/>
@@ -63,6 +66,11 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.Register"/>
+			<item value="com.Register.Mysql"/>
+			<item value="com.Register.NewJDBC"/>
+			<item value="com.Register.LoginServlet"/>
+			<item value="com.Register.Login"/>
 			<item value="com.qsp.Form"/>
 			<item value="com.qsp.Oyyyyyyy"/>
 			<item value="com.qsp.MyServer"/>
@@ -73,12 +81,16 @@
 			<item value="com.qsp.Servlet001"/>
 			<item value="com.qsp.servlet2"/>
 			<item value="com.qsp.ServletDay1"/>
-			<item value="com.qsp.servletDay1"/>
 		</list>
 		<list key="groupId">
+			<item value="com.Register"/>
 			<item value="com.qsp"/>
 		</list>
 		<list key="artifactId">
+			<item value="Mysql"/>
+			<item value="NewJDBC"/>
+			<item value="LoginServlet"/>
+			<item value="Login"/>
 			<item value="Form"/>
 			<item value="Oyyyyyyy"/>
 			<item value="MyServer"/>

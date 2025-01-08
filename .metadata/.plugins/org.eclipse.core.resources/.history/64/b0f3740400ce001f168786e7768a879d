@@ -1,0 +1,10 @@
+package Servlet;
+
+public class CreateJDBC {
+
+	public static boolean fetchData(String name, String pass) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}
