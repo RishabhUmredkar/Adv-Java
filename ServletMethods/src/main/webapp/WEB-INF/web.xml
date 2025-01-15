@@ -4,4 +4,31 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  
+  
+  <context-param>
+  	<param-name>user</param-name>
+  	<param-value>Postgres</param-value>
+  </context-param>
+  
+  
+  <context-param>
+  	<param-name>pass</param-name>
+  	<param-value>root</param-value>
+  </context-param>
+  
+  
+ 	<servlet>
+ 	<servlet-name>Virat</servlet-name>
+ 	<servlet-class>ConfigAndContext.Config</servlet-class>
+ 	<init-param>
+ 	<param-name>wife</param-name>
+ 	<param-value>anushka</param-value>
+ 	</init-param>
+ 	</servlet>
+ 	
+ 	<servlet-mapping>
+ 	<servlet-name>Virat</servlet-name>
+ 	<url-pattern>/virat</url-pattern>
+ 	</servlet-mapping>
 </web-app>

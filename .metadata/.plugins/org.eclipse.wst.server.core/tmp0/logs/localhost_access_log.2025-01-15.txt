@@ -1,0 +1,7 @@
+127.0.0.1 - - [15/Jan/2025:12:47:11 +0530] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [15/Jan/2025:12:47:12 +0530] "GET /ServletMethods/servlet/ConfigAndContext.Config HTTP/1.1" 404 1043
+0:0:0:0:0:0:0:1 - - [15/Jan/2025:12:47:25 +0530] "GET /ServletMethods/servlet/ConfigAndContext.Config HTTP/1.1" 404 1043
+127.0.0.1 - - [15/Jan/2025:12:48:39 +0530] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [15/Jan/2025:12:48:40 +0530] "GET /ServletMethods/ HTTP/1.1" 200 340
+0:0:0:0:0:0:0:1 - - [15/Jan/2025:12:48:45 +0530] "GET /ServletMethods/config HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [15/Jan/2025:12:53:49 +0530] "GET /ServletMethods/virat HTTP/1.1" 404 991

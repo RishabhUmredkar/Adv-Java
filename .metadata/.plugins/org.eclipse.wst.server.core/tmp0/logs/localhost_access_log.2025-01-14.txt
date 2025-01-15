@@ -5,3 +5,6 @@
 0:0:0:0:0:0:0:1 - - [14/Jan/2025:00:40:59 +0530] "GET /ServletMethods/index.html HTTP/1.1" 200 340
 0:0:0:0:0:0:0:1 - - [14/Jan/2025:00:41:05 +0530] "GET /ServletMethods/login?user=sfd&pass=sdsfsd HTTP/1.1" 200 357
 0:0:0:0:0:0:0:1 - - [14/Jan/2025:00:41:12 +0530] "GET /ServletMethods/login?user=abc&pass=password HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jan/2025:00:48:46 +0530] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [14/Jan/2025:00:48:46 +0530] "GET /ServletMethods/index.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [14/Jan/2025:00:48:54 +0530] "GET /ServletMethods/portfolio HTTP/1.1" 302 -

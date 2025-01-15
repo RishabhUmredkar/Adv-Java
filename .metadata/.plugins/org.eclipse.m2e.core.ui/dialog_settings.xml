@@ -66,6 +66,7 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.predefine.ServletMethods"/>
 			<item value="com.Register"/>
 			<item value="com.Register.Mysql"/>
 			<item value="com.Register.NewJDBC"/>
@@ -80,13 +81,14 @@
 			<item value="com.qsp.Hello"/>
 			<item value="com.qsp.Servlet001"/>
 			<item value="com.qsp.servlet2"/>
-			<item value="com.qsp.ServletDay1"/>
 		</list>
 		<list key="groupId">
+			<item value="com.predefine"/>
 			<item value="com.Register"/>
 			<item value="com.qsp"/>
 		</list>
 		<list key="artifactId">
+			<item value="ServletMethods"/>
 			<item value="Mysql"/>
 			<item value="NewJDBC"/>
 			<item value="LoginServlet"/>
@@ -101,7 +103,6 @@
 			<item value="Servlet001"/>
 			<item value="servlet2"/>
 			<item value="ServletDay1"/>
-			<item value="servletDay1"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
